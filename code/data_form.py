@@ -6,6 +6,18 @@ from ctypes import windll
 from time import strftime
 
 
+
+py_file= os.path.abspath(__file__) # path to main.py
+py_dir = os.path.dirname(py_file) # path to the parent dir of main.py
+
+# set wd
+os.chdir(py_dir)
+
+
+
+
+
+
 # import homemade functions
 from fetch_weather_temperature import fetch_weather
 from fetch_location import fetch_location
@@ -13,6 +25,8 @@ from write_to_csv import write_to_csv
 
 # define path
 csv_name = open('../data/csv_name.txt','r').read()
+
+
 
 csv_file = f"../data/{csv_name}.csv"
 
