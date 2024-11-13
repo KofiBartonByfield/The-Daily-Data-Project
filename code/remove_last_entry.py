@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import tkinter as tk
 from tkinter import messagebox
+from ctypes import windll
 
 
 # set wd
@@ -11,6 +12,11 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # define path to the CSV file
 csv_name = open('../data/csv_name.txt','r').read()
 path = f"../data/{csv_name}.csv"
+
+
+# imporve resolution
+windll.shcore.SetProcessDpiAwareness(1)
+
 
 
 # function to remove entry
