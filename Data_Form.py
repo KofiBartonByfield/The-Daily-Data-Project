@@ -1,6 +1,5 @@
 # import libraries
 import tkinter as tk
-#from tkinter import font
 from datetime import date
 import os
 from ctypes import windll
@@ -8,13 +7,14 @@ from time import strftime
 
 
 # import homemade functions
-from functions.fetch_weather_temperature import fetch_weather
-from functions.fetch_location import fetch_location
-from functions.write_to_csv import write_to_csv
+from fetch_weather_temperature import fetch_weather
+from fetch_location import fetch_location
+from write_to_csv import write_to_csv
 
-# define paths
-path = "C:/Users/15kof/OneDrive/Documents/Coding Projects/Data Form/"
-csv_file = f"{path}data.csv"
+# define path
+#path = "C:/Users/15kof/OneDrive/Documents/Coding Projects/Data Form/"
+
+csv_file = "../data/data.csv"
 
 # imporve resolution
 windll.shcore.SetProcessDpiAwareness(1)

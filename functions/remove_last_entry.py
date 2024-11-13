@@ -19,7 +19,7 @@ def remove_last_entry(path):
 
 
 
-path = "C:/Users/15kof/OneDrive/Documents/Coding Projects/Data Form/data.csv"
+path = "../data/data.csv"
 
 # read the CSV file into a DataFrame
 df = pd.read_csv(path)
@@ -35,8 +35,8 @@ user_input = input("Do you want to remove this row? (y or n): ").strip().lower()
 # remove last enrty if user responds "y" and show user
 if user_input == "y":
     remove_last_entry(path)
-    print(df)
+    print(pd.read_csv(path))
 
 else:
     print("No changes made to the file.")
-    print(df)
+    print(pd.read_csv(path))

@@ -1,23 +1,23 @@
 Date,Time,Mood_Level_(1-10),Energy_Level_(1-10),Stress_Level_(1-10),Activities,Hours_of_Sleep,Location,Weather,Temperature_°C
-01/11/2024,19:06,6,3,4,walk,8,"Dublin, IE",overcast clouds,12.05
+01/11/2024,19:06,6,3,4,walk,8.0,"Dublin, IE",overcast clouds,12.05
 02/11/2024,12:02,7,8,2,,8.5,"Dublin, IE",light intensity drizzle,11.72
 03/11/2024,14:45,7,7,2,walk,8.2,"Dublin, IE",broken clouds,13.4
-04/11/2024,09:55,8,6,2,walk gym,7,"Dublin, IE",broken clouds,12.17
-04/11/2024,15:52,7,5,2,walk gym,7,"Dublin, IE",broken clouds,12.63
-04/11/2024,19:04,8,6,3,walk gym,7,"Dublin, IE",broken clouds,11.27
+04/11/2024,09:55,8,6,2,walk gym,7.0,"Dublin, IE",broken clouds,12.17
+04/11/2024,15:52,7,5,2,walk gym,7.0,"Dublin, IE",broken clouds,12.63
+04/11/2024,19:04,8,6,3,walk gym,7.0,"Dublin, IE",broken clouds,11.27
 05/11/2024,09:11,9,6,2,walk gym,6.8,"Dublin, IE",broken clouds,11.96
 05/11/2024,21:08,9,3,2,rugby walk,6.8,"Dublin, IE",broken clouds,12.72
-06/11/2024,08:50,9,9,2,walk,8,"Dublin, IE",broken clouds,14.31
+06/11/2024,08:50,9,9,2,walk,8.0,"Dublin, IE",broken clouds,14.31
 06/11/2024,12:25,8,7,3,,,"Dublin, IE",broken clouds,17.09
-07/11/2024,11:24,6,6,6,walk gym,7,"Dublin, IE",broken clouds,14.14
+07/11/2024,11:24,6,6,6,walk gym,7.0,"Dublin, IE",broken clouds,14.14
 08/11/2024,08:31,7,5,5,,6.5,"Dublin, IE",broken clouds,12.05
-08/11/2024,15:59,7,7,2,walk,6,"Dublin, IE",light intensity drizzle,12.93
-09/11/2024,11:11,8,9,2,,9,"Dublin, IE",broken clouds,11.75
+08/11/2024,15:59,7,7,2,walk,6.0,"Dublin, IE",light intensity drizzle,12.93
+09/11/2024,11:11,8,9,2,,9.0,"Dublin, IE",broken clouds,11.75
 09/11/2024,20:02,8,8,2,walk rugby,,"Dublin, IE",broken clouds,12.37
 10/11/2024,12:36,7,8,2,,9.5,"Dublin, IE",broken clouds,14.84
 10/11/2024,20:49,9,5,2,,,"Dublin, IE",clear sky,8.76
 11/11/2024,11:34,8,8,2,walk gym,5.5,"Dublin, IE",clear sky,9.36
 11/11/2024,19:05,6,4,2,,,"Dublin, IE",few clouds,6.24
-12/11/2024,10:24,8,8,1,walk gym,7,"Dublin, IE",clear sky,5.36
+12/11/2024,10:24,8,8,1,walk gym,7.0,"Dublin, IE",clear sky,5.36
 2024-11-12,22:20,9,4,4,rugby,,"Dublin, IE",few clouds,4.97
-2024-11-13,08:58,9,8,3,walk,8,"Dublin, IE",fog,5.17
+2024-11-13,08:58,9,8,3,walk,8.0,"Dublin, IE",fog,5.17
