@@ -9,11 +9,11 @@ py_dir = os.path.dirname(py_file) # path to the parent dir of main.py
 os.chdir(py_dir)
 
 
-csv_name = open('../data/csv_name.txt','r').read()
+csv_name = open('data/csv_name.txt','r').read()
 
 
 # open the CSV file in write mode
-with open(f"../data/{csv_name}.csv", 'w', encoding='utf-8-sig', newline='') as file:
+with open(f"data/{csv_name}.csv", 'w', encoding='utf-8-sig', newline='') as file:
     
     w = csv.writer(file)
     

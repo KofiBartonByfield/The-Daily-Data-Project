@@ -24,11 +24,11 @@ from fetch_location import fetch_location
 from write_to_csv import write_to_csv
 
 # define path
-csv_name = open('../data/csv_name.txt','r').read()
+csv_name = open('data/csv_name.txt','r').read()
 
 
 
-csv_file = f"../data/{csv_name}.csv"
+csv_file = f"data/{csv_name}.csv"
 
 # imporve resolution
 windll.shcore.SetProcessDpiAwareness(1)

@@ -1,25 +1,10 @@
 import pandas as pd
-
-def remove_last_entry(path):
-    
-    # Read the CSV file into a DataFrame
-    df = pd.read_csv(path)
-    
-    # Check if there are rows to delete
-    if not df.empty:
-        # Remove the last row
-        df = df[:-1]
-        
-        # Write the updated DataFrame back to the CSV file (without the index column)
-        df.to_csv(path, index=False)
-        print("Last entry removed successfully.")
-    else:
-        print("The CSV file is empty. No rows to delete.")
-
-
-
 import os
+import tkinter as tk
+from tkinter import messagebox
 
+
+# extract wd
 py_file= os.path.abspath(__file__) # path to main.py
 py_dir = os.path.dirname(py_file) # path to the parent dir of main.py
 
@@ -27,31 +12,97 @@ py_dir = os.path.dirname(py_file) # path to the parent dir of main.py
 os.chdir(py_dir)
 
 
-
-
-
+# define path to the CSV file
 csv_name = open('../data/csv_name.txt','r').read()
-
-path = f"..\data\{csv_name}.csv"
-
-#path = f"../data/{csv_name}.csv"
-
-# read the CSV file into a DataFrame
-df = pd.read_csv(path)
+path = f"../data/{csv_name}.csv"
 
 
-# inspect the last entry
-print(df.iloc[len(df)-1])
+# function to remove entry
+def remove_last_entry():
+    df = pd.read_csv(path)
+    if not df.empty:
+        df = df[:-1]
+        df.to_csv(path, index=False)
+        messagebox.showinfo("Success", "Last entry removed successfully.")
+    else:
+        messagebox.showwarning("Warning", "The CSV file is empty. No rows to delete.")
 
-# ask user
-user_input = input("Do you want to remove this row? (y or n): ").strip().lower()
+
+# function to load last entry
+def load_last_entry():
+    
+    # clear existing data display
+    for widget in data_frame.winfo_children():
+        widget.destroy()  
+    
+    # if file exists
+    if os.path.isfile(path):
+        df = pd.read_csv(path)
+        
+        # if there is data inside
+        if not df.empty:
+            
+            # get the last row of the df
+            last_row = df.iloc[-1] 
+            for i, (col_name, value) in enumerate(last_row.items()):
+                tk.Label(data_frame, 
+                         text=col_name + ":",
+                         font=("TkDefaultFont", 10, "bold"),
+                         anchor="w").grid(row=i, 
+                                          column=0, 
+                                          sticky="w", 
+                                          padx=5, 
+                                          pady=2)
+                tk.Label(data_frame, 
+                         text=str(value), 
+                         anchor="w").grid(row=i, 
+                                          column=1, 
+                                          sticky="w", 
+                                          padx=5, 
+                                          pady=2)
+        else:
+            tk.Label(data_frame, 
+                     text="The CSV file is empty.").grid(row=0,
+                                                         column=0, 
+                                                         columnspan=2, 
+                                                         padx=5, 
+                                                         pady=5)
+    else:
+        tk.Label(data_frame, text="Invalid file path.").grid(row=0, 
+                                                             column=0, 
+                                                             columnspan=2, 
+                                                             padx=5, 
+                                                             pady=5)
 
 
-# remove last enrty if user responds "y" and show user
-if user_input == "y":
-    remove_last_entry(path)
-    print(pd.read_csv(path))
+# ask user to confirm removal of last entry
+def confirm_and_remove():
+    if os.path.isfile(path):
+        response = messagebox.askyesno(
+            "Confirm", "Do you want to remove the last row?"
+        )
+        if response:
+            remove_last_entry()
+            load_last_entry()
+    else:
+        messagebox.showerror("Error", "Invalid file path. Please check the path.")
 
-else:
-    print("No changes made to the file.")
-    print(pd.read_csv(path))
+
+
+
+# Tkinter GUI setup
+root = tk.Tk()
+root.title("CSV Row Remover")
+
+
+# frame for displaying last entry data in a landscape format
+data_frame = tk.Frame(root)
+data_frame.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
+
+# Confirm button
+tk.Button(root, text="Remove Last Entry", command=confirm_and_remove).grid(row=1, column=0, columnspan=2, pady=10)
+
+# Load the last entry on startup
+load_last_entry()
+
+root.mainloop()
