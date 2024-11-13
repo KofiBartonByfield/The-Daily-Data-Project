@@ -4,7 +4,8 @@
 The Daily Data Project is a personal data collection and analysis tool designed to identify correlations between mood, energy, and lifestyle factors. This project collects daily entries with information on mood, energy, stress, activities, sleep, and environmental conditions (weather, temperature, location) and provides insights through detailed data visualisations and analysis.
 
 ## **Features**
-- A Tkinter-based GUI form to record daily data entries
+- A Tkinter GUI form to record daily data entries
+- A Tkinter GUI form to remove previous data entries
 - Automated logging of data - including location, temperature, weather conditions, date and time
 - Cleaning, processing, and aggregation of data for accurate analysis
 - Generation of visualisations to reveal patterns and trends over time
@@ -21,10 +22,26 @@ The Daily Data Project is a personal data collection and analysis tool designed 
 9. **Weather**: Description of weather conditions.
 10. **Temperature**: Temperature in °C.
 
-## **Setup**
+
+
+## **Table of Contents**
+
+
+
+
+
+
+## **How to Install and Run the Project**
+- clone the repo
+- open the ``CSV_name.txt``
+  - change the text inside to your desired csv name
+- run the ``data_form.py`` file
+- start entering the data
 
 ### **Prerequisites**
-- Python 
+- Python
+- python3-tk
+  
 - Required packages:
   - Tkinter
   - pandas
@@ -33,11 +50,6 @@ The Daily Data Project is a personal data collection and analysis tool designed 
   - time
   - ctypes
   - requests
-
-
-### **May be required for use**
-pip install pandas
-sudo apt-get install python3-tk
 
 
 # **To-Do**
