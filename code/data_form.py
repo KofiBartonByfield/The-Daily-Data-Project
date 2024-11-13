@@ -12,8 +12,6 @@ from fetch_location import fetch_location
 from write_to_csv import write_to_csv
 
 # define path
-#path = "C:/Users/15kof/OneDrive/Documents/Coding Projects/Data Form/"
-
 csv_file = "../data/data.csv"
 
 # imporve resolution
