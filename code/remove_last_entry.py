@@ -4,12 +4,8 @@ import tkinter as tk
 from tkinter import messagebox
 
 
-# extract wd
-py_file= os.path.abspath(__file__) # path to main.py
-py_dir = os.path.dirname(py_file) # path to the parent dir of main.py
-
 # set wd
-os.chdir(py_dir)
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 # define path to the CSV file

@@ -34,3 +34,7 @@ The Daily Data Project is a personal data collection and analysis tool designed 
   - ctypes
   - requests
 
+
+
+pip install pandas
+sudo apt-get install python3-tk
