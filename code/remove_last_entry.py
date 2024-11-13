@@ -18,8 +18,10 @@ def remove_last_entry(path):
 
 
 
+csv_name = open('../data/csv_name.txt','r').read()
 
-path = "../data/data.csv"
+
+path = f"../data/{csv_name}.csv"
 
 # read the CSV file into a DataFrame
 df = pd.read_csv(path)
