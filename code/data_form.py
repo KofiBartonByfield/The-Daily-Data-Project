@@ -6,13 +6,18 @@ from ctypes import windll
 from time import strftime
 import os
 import os.path as op
+#import sys
 
+
+# Add the relative path to the directory containing your modules
+#sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../google_drive')))
+
+# Now you can import the modules
+#from upload_to_drive import upload_to_drive
 
 
 # set wd
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-
-
 
 # import homemade functions
 from fetch_weather_temperature import fetch_weather
@@ -46,7 +51,8 @@ def submit():
         api_key = os.getenv("OPENWEATHER_API_KEY")
         
         # user information
-        today = date.today()
+        #today = date.today()
+        today = date.today().strftime('%Y-%m-%d')
         now = strftime("%H:%M")
         mood = mood_entry.get()
         energy = energy_entry.get()
@@ -71,8 +77,29 @@ def submit():
         # put the info into the csv
         write_to_csv(csv_file, data_to_write)
     
+
+        # send the data to online csv
+        # upload_to_drive(today, 
+        #                  now,
+        #                  mood, 
+        #                  energy, 
+        #                  stress, 
+        #                  activities, 
+        #                  sleep_hours, 
+        #                  location, 
+        #                  weather, 
+        #                  temp)
+        
+        
+        
+        
         # close the window
         root.destroy()
+        
+        
+        
+        
+        
     
     # Tkinter setup
     root = tk.Tk()
@@ -143,9 +170,16 @@ def submit():
     
     
     root.mainloop()
+    
+    
+  
 
 
 
+    
+
+
+ 
 
 # fill in csv
 if op.isfile(f"../data/{csv_name}.csv"):
@@ -153,6 +187,8 @@ if op.isfile(f"../data/{csv_name}.csv"):
     # file already exists
     # run code to input data
     submit()
+    
+    
     
 else:
     
